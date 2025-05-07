@@ -1,0 +1,15 @@
+# Error Handling Lab 🧪
+
+# Ask the user for a filename
+filename = input("Please enter the filename you want to read: ")
+
+try:
+    # Attempt to open the file for reading
+    with open(filename, "r") as file:
+        content = file.read()
+        print("File content:\n", content)
+
+except FileNotFoundError:
+    print(f"Error: The file '{filename}' does not exist.")
+except IOError:
+    print(f"Error: There was a problem reading the file '{filename}'.")
