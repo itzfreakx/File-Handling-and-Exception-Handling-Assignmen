@@ -1,0 +1,19 @@
+# File Read & Write Challenge 🖋️
+
+# Open the original file for reading
+try:
+    with open("original.txt", "r") as file:
+        content = file.read()
+        
+    # Modify the content (for example, convert to uppercase)
+    modified_content = content.upper()
+
+    # Write the modified content to a new file
+    with open("modified.txt", "w") as new_file:
+        new_file.write(modified_content)
+        
+    print("The file has been modified and saved as 'modified.txt'.")
+except FileNotFoundError:
+    print("The file 'original.txt' does not exist.")
+except IOError:
+    print("An error occurred while reading or writing the file.")
